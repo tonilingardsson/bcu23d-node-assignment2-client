@@ -1,15 +1,13 @@
 :root {
-  --primary-color: #000720;
-  --secondary-color: #eedddd;
+  --primary-color: #101010;
+  --secondary-color: #fefefe;
   --container-max-width: 1280px;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: var(--primary-color);
   background-color: var(--secondary-color);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -38,28 +36,28 @@ h1 {
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: #11a418;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #535bf2;
+  color: #2fd520;
 }
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #11a418;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: var(--secondary-color);
 }
 
 button:focus,
@@ -78,6 +76,11 @@ ul {
   width: 100%;
 }
 
-.active {
+.active span {
+  color: var(--primary-color);
   text-decoration: underline;
+}
+
+.active button {
+  background-color: var(--primary-color);
 }
