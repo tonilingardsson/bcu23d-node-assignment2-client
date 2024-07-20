@@ -1,0 +1,41 @@
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.link {
+    display: flex;
+    place-items: center;
+    gap: 1rem;
+    color: var(--primary-color);
+
+    img {
+        width: 80px;
+        height: auto;
+    }
+
+    h1 {
+        text-transform: uppercase;
+    }
+}
+
+.link:hover {
+    color: var(--primary-color);
+}
+
+.ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
