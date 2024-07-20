@@ -1,32 +1,29 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import updateFormData from '../utils/updateFormData';
 import { Link } from 'react-router-dom';
 import { addTransaction } from '../services/transactionService';
+import GlobalContext from '../contexts/GlobalContext';
 
 function Transaction() {
+  const { isValid } = useContext(GlobalContext);
   const [formData, setFormData] = useState({
     recipient: '',
     amount: '',
   });
-
   function handleChange(e) {
     updateFormData(e, formData, setFormData);
   }
-
   async function handleSubmit(e) {
     e.preventDefault();
-
     const token = localStorage.getItem('TOKEN');
     const data = { ...formData, amount: +formData.amount };
-
     addTransaction(token, data);
   }
-
   return (
     <section>
       <h2>Transaction</h2>
 
-      {localStorage.getItem('TOKEN') ? (
+      {isValid ? (
         <form onSubmit={handleSubmit}>
           <div>
             <label>

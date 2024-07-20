@@ -1,9 +1,14 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import style from '../../styles/Header.module.css';
+import { useContext } from 'react';
+import GlobalContext from '../../contexts/GlobalContext';
 function Header() {
   const navigate = useNavigate();
+  const { isValid, setIsValid } = useContext(GlobalContext);
   function handleSignOut() {
     localStorage.removeItem('TOKEN');
+
+    setIsValid(false);
     navigate('/');
   }
   return (
@@ -16,14 +21,20 @@ function Header() {
         <nav>
           <ul className={style.ul}>
             <li>
-              <NavLink to='/'>Home</NavLink>
+              <NavLink to='/'>
+                <span>Home</span>
+              </NavLink>
             </li>
             <li>
-              <NavLink to='/explorer'>Explorer</NavLink>
+              <NavLink to='/explorer'>
+                <span>Explorer</span>
+              </NavLink>
             </li>
 
             <li>
-              <NavLink to='/send'>Transaction</NavLink>
+              <NavLink to='/send'>
+                <span>New transaction</span>
+              </NavLink>
             </li>
 
             {!localStorage.getItem('TOKEN') ? (
