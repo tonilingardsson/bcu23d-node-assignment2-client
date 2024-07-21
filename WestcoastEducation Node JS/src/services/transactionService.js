@@ -1,22 +1,20 @@
 import { httpClient } from '../utils/httpClient';
 
 export const addTransaction = async (token, data) => {
-    return await httpClient({
+    const response = await httpClient({
         method: 'post',
         endpoint: '/transactions/add',
         token,
         data,
     });
+
+    return response?.data;
 };
 
 export const getTransactions = async (token) => {
-    return await httpClient({ method: 'get', endpoint: '/transactions', token });
-};
+    const response = await httpClient({ method: 'get', endpoint: '/transactions', token });
 
-export const getWallet = async (token) => {
-    return await httpClient({
-        method: 'get', endpoint: '/transactions/wallet', token
-    });
+    return response?.data;
 };
 
 export const mineTransactions = async (token) => {
