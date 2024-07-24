@@ -30,6 +30,13 @@ h1 {
   font-size: 2.5rem;
 }
 
+.logo {
+  height: 12em;
+  padding: 3em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
 .page {
   max-width: 600px;
   margin: 3rem auto;
