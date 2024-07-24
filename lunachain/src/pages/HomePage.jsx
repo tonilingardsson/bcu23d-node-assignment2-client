@@ -1,12 +1,14 @@
 import Header from '../components/Header';
-import Block from '../components/Block';
+import Wallet from '../components/Wallet';
+import Blockchain from '../components/Blockchain';
 import Footer from '../components/Footer';
 
 function HomePage() {
   return (
     <section className='page'>
       <Header />
-      <Block />
+      <Wallet />
+      <Blockchain />
       <Footer />
     </section>
   );
