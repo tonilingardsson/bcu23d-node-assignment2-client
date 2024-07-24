@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Block from './Block';
 
 function Blockchain() {
   const [blockchain, setBlockchain] = useState([]);
@@ -18,6 +19,13 @@ function Blockchain() {
       console.log(error);
     }
   };
-  return <div>Blockchain</div>;
+  return (
+    <div className='blockchain'>
+      <h2 className='title'>LunaChain</h2>
+      {blockchain.map((block) => (
+        <Block className='block' key={block.hash} block={block} />
+      ))}
+    </div>
+  );
 }
 export default Blockchain;
