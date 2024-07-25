@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import Block from './Block';
+// COPY loadBlockchain on services/api IMPORT IT INSTEAD OF fetchBlockchain and ERASE loadBlockchain on this file
+// Do the same with the other functions/API endpoints
+// import { fetchBlockchain } from '../services/api';
 
 function Blockchain() {
   const [blockchain, setBlockchain] = useState([]);
@@ -19,6 +22,7 @@ function Blockchain() {
       console.log(error);
     }
   };
+  console.log(blockchain);
   return (
     <div className='blockchain'>
       <h2 className='title'>LunaChain</h2>

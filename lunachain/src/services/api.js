@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5001/api/v1/';
+const API_URL = 'http://localhost:5001/api/v1';
 
 export const fetchBlockchain = async () => {
-  const response = await axios.get(`${API_URL}/blocks`);
+  const response = await axios.get(`${API_URL}/blockchain`);
   return response.data;
 };
 

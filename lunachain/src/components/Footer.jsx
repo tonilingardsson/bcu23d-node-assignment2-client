@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className='footer'>
-      <p>Lunchain &copy; 2024. All rights reserved.</p>
+      <p>Lunachain &copy; 2024. All rights reserved.</p>
     </footer>
   );
 }

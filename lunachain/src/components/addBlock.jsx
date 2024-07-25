@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addBlock } from '../services/api';
+import { addBlock } from '../services/api.jsx';
 
 const AddBlock = () => {
   const [data, setData] = useState('');
