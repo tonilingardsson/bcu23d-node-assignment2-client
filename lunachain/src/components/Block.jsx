@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import Transaction from './Transaction';
+import Transaction from './Transaction.jsx';
 
-function Block({ block }) {
-  const [displayDetails, setDisplayDetails] = useState(false);
+function Block({ block, isFirstBlock }) {
+  const [displayDetails, setDisplayDetails] = useState(isFirstBlock);
   const shortHash = `${block.hash.substring(0, 15)}...`;
   const shortHandData =
     JSON.stringify(block.data).length > 40
