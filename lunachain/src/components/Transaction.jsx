@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 function Transaction({ transaction }) {
   const { inputMap, outputMap } = transaction;
-  const recipients = Object.keeys(outputMap);
+  const recipients = Object.keys(outputMap);
   const fromAddress =
     JSON.stringify(inputMap.address).length > 20
       ? `${JSON.stringify(inputMap.address).substring(1, 20)}...`
