@@ -8,6 +8,6 @@ export const fetchBlockchain = async () => {
 };
 
 export const addBlock = async (data) => {
-  const response = await axios.post(`${API_URL}/blocks`, { data });
+  const response = await axios.post(`${API_URL}/transactions/mine`, { data });
   return response.data;
 };

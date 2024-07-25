@@ -20,11 +20,14 @@ const MineTransaction = () => {
   };
 
   return (
-    <div>
+    <div className='mine component'>
       <h2>Mine Transaction</h2>
-      <button type='submit' onClick={mineBlock}>
-        Mine
-      </button>
+      <div>
+        <button type='submit' onClick={mineBlock}>
+          Mine
+        </button>
+        <p>Refresh page to visualize the new block (temporary)</p>
+      </div>
     </div>
   );
 };

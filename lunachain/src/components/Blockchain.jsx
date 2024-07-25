@@ -25,7 +25,7 @@ function Blockchain() {
   console.log(blockchain);
   return (
     <div className='blockchain'>
-      <h2 className='title'>LunaChain</h2>
+      <h2 className='title'>LunaChain's Blocks</h2>
       {blockchain.map((block) => (
         <Block className='block' key={block.hash} block={block} />
       ))}
