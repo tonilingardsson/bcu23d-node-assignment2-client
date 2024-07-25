@@ -9,7 +9,13 @@ function Wallet() {
 
   const getWalletInfo = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/v1/wallet');
+      const response = await fetch(
+        'http://localhost:5001/api/v1/transactions/wallet',
+        {
+          method: 'GET',
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        }
+      );
       if (response.ok) {
         const result = await response.json();
         setWallet(result.data);
@@ -22,8 +28,8 @@ function Wallet() {
     <div className='wallet'>
       <h2 className='title'>LunaChain</h2>
       <div className='wallet-info'>
-        <span>Address: {wallet.address}</span>
-        <span>Balance: {wallet.balance}</span>
+        <span className='address flex-row'>Address: {wallet.address}</span>
+        <span className='balance flex-row'>Balance: {wallet.balance}</span>
       </div>
     </div>
   );
